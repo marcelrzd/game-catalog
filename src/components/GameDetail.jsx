@@ -21,7 +21,7 @@ const GameDetail = () => {
           <Info>
             <h3>Platforms</h3>
             <Platforms>
-              {game.platforms.map((data) => (
+              {game.platforms?.map((data) => (
                 <h3 key={data.platform.id}>{data.platform.name}</h3>
               ))}
             </Platforms>
