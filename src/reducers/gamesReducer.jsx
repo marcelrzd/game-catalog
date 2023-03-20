@@ -14,4 +14,11 @@ const gamesReducer = (state = initialState, action) => {
   }
 };
 
+// Action creators
+const fetchGames = () => {
+  return {
+    type: "FETCH_GAMES",
+  };
+};
+
 export default gamesReducer;
