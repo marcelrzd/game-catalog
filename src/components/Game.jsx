@@ -12,6 +12,7 @@ import { loadDetail } from "../actions/detailAction";
 import { Link } from "react-router-dom";
 
 const Game = ({ name, released, id, image }) => {
+  const stringPathId = id.toString();
   // load details handler
   const dispatch = useDispatch();
   const loadDetailHandler = () => {
@@ -20,11 +21,15 @@ const Game = ({ name, released, id, image }) => {
   };
 
   return (
-    <StyledGame onClick={loadDetailHandler}>
+    <StyledGame onClick={loadDetailHandler} layoutId={stringPathId}>
       <Link to={`/game/${id}`}>
-        <h3>{name}</h3>
+        <motion.h3 layoutId={`title ${stringPathId}`}>{name}</motion.h3>
         <p>{released}</p>
-        <img src={smallImage(image, 640)} alt={name} />
+        <motion.img
+          layoutId={`image ${stringPathId}`}
+          src={smallImage(image, 640)}
+          alt={name}
+        />
       </Link>
     </StyledGame>
   );
