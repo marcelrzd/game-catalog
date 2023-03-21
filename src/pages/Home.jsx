@@ -5,6 +5,7 @@ import { loadGames } from "../actions/gamesAction";
 // style and animation
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
+import { fadeIn } from "../animations";
 // Components
 import Game from "../components/Game";
 import GameDetail from "../components/GameDetail";
@@ -27,7 +28,7 @@ const Home = () => {
   );
 
   return (
-    <GameList>
+    <GameList variants={fadeIn} initial="hidden" animate="show">
       <AnimatePresence>
         {pathID && <GameDetail pathID={pathID} />}
       </AnimatePresence>
