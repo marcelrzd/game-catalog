@@ -44,6 +44,10 @@ const GlobalStyles = createGlobalStyle`
  img{
    display: block
 }
+input{
+   font-weight: bold;
+   font-family: "Montserrat", sand-serif;
+}
 `;
 
 export default GlobalStyles;
