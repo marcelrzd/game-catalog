@@ -3,6 +3,7 @@ import React from "react";
 // style and animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { smallImage } from "../util";
 
 // Redux
 import { useSelector } from "react-redux";
@@ -40,7 +41,10 @@ const GameDetail = () => {
               </Info>
             </Stats>
             <Media>
-              <img src={game.background_image} alt="game_image" />
+              <img
+                src={smallImage(game.background_image, 640)}
+                alt="game_image"
+              />
             </Media>
             <Description>
               <p>{game.description_raw}</p>
@@ -49,7 +53,7 @@ const GameDetail = () => {
               {screenshot.results.map((screen) => (
                 <img
                   key={screenshot.id}
-                  src={screen.image}
+                  src={smallImage(screen.image, 640)}
                   alt="game_screenshot"
                 />
               ))}
