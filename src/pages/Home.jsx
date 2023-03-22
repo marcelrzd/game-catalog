@@ -93,6 +93,11 @@ const GameList = styled(motion.div)`
   h2 {
     padding: 5rem 0rem;
   }
+  @media (max-width: 1000px) {
+    h2 {
+      text-align: center;
+    }
+  }
 `;
 const Games = styled(motion.div)`
   min-height: 80vh;

@@ -1,29 +1,44 @@
 import React from "react";
 
 // style and animation
-import styled from "styled-components";
 import { motion } from "framer-motion";
-import { smallImage } from "../util";
+import { smallImage } from "../../util";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  CardShadow,
+  CloseButton,
+  Detail,
+  Stats,
+  Info,
+  Platforms,
+  Media,
+  Description,
+} from "./style/GameDetailStyles";
 
 // Redux
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 // logos
-import playstation4 from "../img/ps4.svg";
-import playstation5 from "../img/ps5.svg";
-import steam from "../img/steam.svg";
-import xbox from "../img/xbox.svg";
-import nintendo from "../img/nintendo.svg";
-import apple from "../img/apple.svg";
-import gamepad from "../img/gamepad.svg";
+import playstation4 from "../../img/ps4.svg";
+import playstation5 from "../../img/ps5.svg";
+import steam from "../../img/steam.svg";
+import xbox from "../../img/xbox.svg";
+import nintendo from "../../img/nintendo.svg";
+import apple from "../../img/apple.svg";
+import gamepad from "../../img/gamepad.svg";
 // stars
-import starEmpty from "../img/star-empty.png";
-import starFull from "../img/star-full.png";
+import starEmpty from "../../img/star-empty.png";
+import starFull from "../../img/star-full.png";
 
 const GameDetail = ({ pathID }) => {
   const navigate = useNavigate();
   // exit detail
+  const closeButtonHandler = (e) => {
+    document.body.style.overflow = "auto";
+    navigate("/");
+  };
   const exitDetailHandler = (e) => {
     const element = e.target;
     if (element.classList.contains("shadow")) {
@@ -74,6 +89,9 @@ const GameDetail = ({ pathID }) => {
       {!isLoading && (
         <CardShadow className="shadow" onClick={exitDetailHandler}>
           <Detail layoutId={pathID}>
+            <CloseButton id="exit" onClick={closeButtonHandler}>
+              <FontAwesomeIcon onClick={closeButtonHandler} icon={faXmark} />
+            </CloseButton>
             <Stats>
               <div className="rating">
                 <motion.h3 layoutId={`title ${pathID}`}>{game.name}</motion.h3>
@@ -119,72 +137,5 @@ const GameDetail = ({ pathID }) => {
     </>
   );
 };
-
-const CardShadow = styled(motion.div)`
-  width: 100%;
-  min-height: 100vh;
-  overflow-y: scroll;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  &::-webkit-scrollbar {
-    width: 0.5rem;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #ff7676;
-  }
-  &::-webkit-scrollbar-track {
-    background: white;
-  }
-`;
-
-const Detail = styled(motion.div)`
-  width: 80%;
-  border-radius: 1rem;
-  padding: 2rem 5rem;
-  background: white;
-  position: absolute;
-  left: 10%;
-  color: black;
-  img {
-    width: 100%;
-  }
-`;
-
-const Stats = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  img {
-    width: 2rem;
-    height: 2rem;
-    display: inline;
-  }
-`;
-
-const Info = styled(motion.div)`
-  text-align: center;
-`;
-
-const Platforms = styled(motion.div)`
-  display: flex;
-  justify-content: space-evenly;
-  img {
-    margin-left: 3rem;
-  }
-`;
-
-const Media = styled(motion.div)`
-  margin-top: 5rem;
-  img {
-    width: 100%;
-  }
-`;
-
-const Description = styled(motion.div)`
-  margin: 5rem 0rem;
-`;
 
 export default GameDetail;
