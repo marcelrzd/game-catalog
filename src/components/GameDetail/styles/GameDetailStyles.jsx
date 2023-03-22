@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const CardShadow = styled(motion.div)`
+const CardShadow = styled(motion.div)`
   width: 100%;
   min-height: 100vh;
   overflow-y: scroll;
@@ -21,7 +21,7 @@ export const CardShadow = styled(motion.div)`
   }
 `;
 
-export const CloseButton = styled(motion.span)`
+const CloseButton = styled(motion.span)`
   z-index: 2;
   position: absolute;
   top: 0;
@@ -36,7 +36,7 @@ export const CloseButton = styled(motion.span)`
   }
 `;
 
-export const Detail = styled(motion.div)`
+const Detail = styled(motion.div)`
   width: 80%;
   border-radius: 1rem;
   padding: 2rem 5rem;
@@ -53,7 +53,7 @@ export const Detail = styled(motion.div)`
   }
 `;
 
-export const Stats = styled(motion.div)`
+const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -64,11 +64,11 @@ export const Stats = styled(motion.div)`
   }
 `;
 
-export const Info = styled(motion.div)`
+const Info = styled(motion.div)`
   text-align: center;
 `;
 
-export const Platforms = styled(motion.div)`
+const Platforms = styled(motion.div)`
   display: flex;
   justify-content: space-evenly;
   img {
@@ -76,13 +76,24 @@ export const Platforms = styled(motion.div)`
   }
 `;
 
-export const Media = styled(motion.div)`
+const Media = styled(motion.div)`
   margin-top: 5rem;
   img {
     width: 100%;
   }
 `;
 
-export const Description = styled(motion.div)`
+const Description = styled(motion.div)`
   margin: 5rem 0rem;
 `;
+
+export default {
+  CardShadow,
+  CloseButton,
+  Detail,
+  Stats,
+  Info,
+  Platforms,
+  Media,
+  Description,
+};

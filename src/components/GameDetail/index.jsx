@@ -5,16 +5,7 @@ import { motion } from "framer-motion";
 import { smallImage } from "../../util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import {
-  CardShadow,
-  CloseButton,
-  Detail,
-  Stats,
-  Info,
-  Platforms,
-  Media,
-  Description,
-} from "./style/GameDetailStyles";
+import GameDetailStyles from "./styles/GameDetailStyles";
 
 // Redux
 import { useSelector } from "react-redux";
@@ -87,20 +78,26 @@ const GameDetail = ({ pathID }) => {
   return (
     <>
       {!isLoading && (
-        <CardShadow className="shadow" onClick={exitDetailHandler}>
-          <Detail layoutId={pathID}>
-            <CloseButton id="exit" onClick={closeButtonHandler}>
+        <GameDetailStyles.CardShadow
+          className="shadow"
+          onClick={exitDetailHandler}
+        >
+          <GameDetailStyles.Detail layoutId={pathID}>
+            <GameDetailStyles.CloseButton
+              id="exit"
+              onClick={closeButtonHandler}
+            >
               <FontAwesomeIcon onClick={closeButtonHandler} icon={faXmark} />
-            </CloseButton>
-            <Stats>
+            </GameDetailStyles.CloseButton>
+            <GameDetailStyles.Stats>
               <div className="rating">
                 <motion.h3 layoutId={`title ${pathID}`}>{game.name}</motion.h3>
                 <p>Rating: {game.rating}</p>
                 {getStars()}
               </div>
-              <Info>
+              <GameDetailStyles.Info>
                 <h3>Platforms</h3>
-                <Platforms>
+                <GameDetailStyles.Platforms>
                   {game.platforms.map((data) => (
                     <img
                       src={getPlatform(data.platform.name)}
@@ -109,19 +106,19 @@ const GameDetail = ({ pathID }) => {
                     ></img>
                     // <h1>{data.platform.name}</h1>
                   ))}
-                </Platforms>
-              </Info>
-            </Stats>
-            <Media>
+                </GameDetailStyles.Platforms>
+              </GameDetailStyles.Info>
+            </GameDetailStyles.Stats>
+            <GameDetailStyles.Media>
               <motion.img
                 layoutId={`image ${pathID}`}
                 src={smallImage(game.background_image, 640)}
                 alt="game_image"
               />
-            </Media>
-            <Description>
+            </GameDetailStyles.Media>
+            <GameDetailStyles.Description>
               <p>{game.description_raw}</p>
-            </Description>
+            </GameDetailStyles.Description>
             <div className="gallery">
               {screenshot.results.map((screen) => (
                 <img
@@ -131,8 +128,8 @@ const GameDetail = ({ pathID }) => {
                 />
               ))}
             </div>
-          </Detail>
-        </CardShadow>
+          </GameDetailStyles.Detail>
+        </GameDetailStyles.CardShadow>
       )}
     </>
   );

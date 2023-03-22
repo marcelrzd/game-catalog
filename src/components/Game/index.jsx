@@ -1,6 +1,6 @@
 import React from "react";
 // style and animation
-import { StyledGame } from "./style/GameStyles";
+import { StyledGame } from "./styles/GameStyles";
 import { motion } from "framer-motion";
 import { smallImage } from "../../util";
 import { popUp } from "../../animations";

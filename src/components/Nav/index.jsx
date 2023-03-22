@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // styles and animation
-import { StyledNav, Logo } from "./style/NavStyle";
+import NavStyle from "./styles/NavStyle";
 import logo from "../../img/logo.svg";
 import { fadeIn } from "../../animations";
 // redux and routes
@@ -24,18 +24,18 @@ const Nav = () => {
   };
 
   return (
-    <StyledNav variants={fadeIn} initial="hidden" animate="show">
-      <Logo onClick={clearSearched}>
+    <NavStyle.StyledNav variants={fadeIn} initial="hidden" animate="show">
+      <NavStyle.Logo onClick={clearSearched}>
         <img src={logo} alt="logo" />
         <h1>Games Library</h1>
-      </Logo>
+      </NavStyle.Logo>
       <form className="search">
         <input value={textInput} onChange={inputHandler} type="text" />
         <button type="submit" onClick={submitSearch}>
           Search
         </button>
       </form>
-    </StyledNav>
+    </NavStyle.StyledNav>
   );
 };
 

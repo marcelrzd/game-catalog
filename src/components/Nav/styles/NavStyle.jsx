@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const StyledNav = styled(motion.nav)`
+const StyledNav = styled(motion.nav)`
   padding: 3rem 5rem;
   text-align: center;
   input {
@@ -50,7 +50,7 @@ export const StyledNav = styled(motion.nav)`
   }
 `;
 
-export const Logo = styled(motion.div)`
+const Logo = styled(motion.div)`
   display: flex;
   justify-content: center;
   padding: 1rem;
@@ -62,3 +62,8 @@ export const Logo = styled(motion.div)`
     width: 2rem;
   }
 `;
+
+export default {
+  StyledNav,
+  Logo,
+};
