@@ -88,7 +88,7 @@ const Home = () => {
       )}
       {newGames.length ? (
         <div>
-          <h2>New Games</h2>
+          <h2>New Releases</h2>
           <HomeStyles.Games>
             {newGames.map((game) => (
               <Game

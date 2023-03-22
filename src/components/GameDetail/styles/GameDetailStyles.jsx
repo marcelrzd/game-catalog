@@ -48,7 +48,7 @@ const Detail = styled(motion.div)`
     width: 100%;
   }
   @media (max-width: 815px) {
-    background: aliceblue;
+    overflow: hidden;
     /* position: fixed; */
   }
 `;

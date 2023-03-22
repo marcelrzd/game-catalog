@@ -56,22 +56,36 @@ const StyledFilter = styled(motion.div)`
     background: #ff7676;
     color: white;
   }
-  li {
-    font-weight: bold;
-    display: inline;
-    border-radius: 1.3rem;
-    border: none;
-    padding: 0.5rem 3rem;
-    cursor: pointer;
-    transition: background 0.75s ease, color 0.3s ease;
+  ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    li {
+      font-weight: bold;
+      position: relative;
+      border-radius: 1.3rem;
+      border: none;
+      padding: 0.5rem 3rem;
+      cursor: pointer;
+      transition: background 0.75s ease, color 0.3s ease;
+    }
+    li:hover {
+      border-radius: 1.3rem;
+      border: none;
+      padding: 0.5rem 3rem;
+      background: #ff7676;
+      color: white;
+      transition: background 0.75s ease, color 0.3s ease;
+    }
   }
-  li:hover {
-    border-radius: 1.3rem;
-    border: none;
-    padding: 0.5rem 3rem;
-    background: #ff7676;
-    color: white;
-    transition: background 0.75s ease, color 0.3s ease;
+
+  @media (max-width: 815px) {
+    ul {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* display: list-item; */
   }
 `;
 

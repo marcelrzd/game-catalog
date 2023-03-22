@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 const GameList = styled(motion.div)`
   margin-top: -6%;
-  /* margin-bottom: -11%; */
   padding: 0rem 5rem;
   h2 {
     padding: 2rem 0rem;
@@ -13,6 +12,10 @@ const GameList = styled(motion.div)`
       text-align: center;
     }
   }
+  @media (max-width: 700px) {
+    width: 100%;
+    overflow: hidden;
+  }
 `;
 const Games = styled(motion.div)`
   min-height: 80vh;
@@ -20,6 +23,9 @@ const Games = styled(motion.div)`
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-column-gap: 3rem;
   grid-row-gap: 5rem;
+  @media (max-width: 655px) {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
 `;
 
 export default {
