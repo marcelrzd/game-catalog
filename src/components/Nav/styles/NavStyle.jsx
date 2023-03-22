@@ -50,6 +50,31 @@ const StyledNav = styled(motion.nav)`
   }
 `;
 
+const StyledFilter = styled(motion.div)`
+  padding: 4rem 2rem;
+  .active {
+    background: #ff7676;
+    color: white;
+  }
+  li {
+    font-weight: bold;
+    display: inline;
+    border-radius: 1.3rem;
+    border: none;
+    padding: 0.5rem 3rem;
+    cursor: pointer;
+    transition: background 0.75s ease, color 0.3s ease;
+  }
+  li:hover {
+    border-radius: 1.3rem;
+    border: none;
+    padding: 0.5rem 3rem;
+    background: #ff7676;
+    color: white;
+    transition: background 0.75s ease, color 0.3s ease;
+  }
+`;
+
 const Logo = styled(motion.div)`
   display: flex;
   justify-content: center;
@@ -66,4 +91,5 @@ const Logo = styled(motion.div)`
 export default {
   StyledNav,
   Logo,
+  StyledFilter,
 };

@@ -35,6 +35,13 @@ const Nav = () => {
           Search
         </button>
       </form>
+      <NavStyle.StyledFilter>
+        <ul>
+          <li className="active">Upcoming</li>
+          <li>Popular</li>
+          <li>New</li>
+        </ul>
+      </NavStyle.StyledFilter>
     </NavStyle.StyledNav>
   );
 };
