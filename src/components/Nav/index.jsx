@@ -36,9 +36,9 @@ const Nav = () => {
 
   const [listItems, setListItems] = useState([
     { id: "All", class: "active" },
-    { id: "Upcoming", class: "" },
-    { id: "Popular", class: "" },
     { id: "New", class: "" },
+    { id: "Popular", class: "" },
+    { id: "Upcoming", class: "" },
   ]);
   const handleItemClick = (id) => {
     clearSearched();
