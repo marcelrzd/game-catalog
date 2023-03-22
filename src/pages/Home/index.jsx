@@ -50,40 +50,60 @@ const Home = () => {
       ) : (
         ""
       )}
-      <h2>Upcoming Games</h2>
-      <HomeStyles.Games>
-        {upcoming.map((game) => (
-          <Game
-            name={game.name}
-            released={game.released}
-            id={game.id}
-            image={game.background_image}
-            key={game.id}
-          />
-        ))}
-      </HomeStyles.Games>
-      <HomeStyles.Games>
-        {popular.map((game) => (
-          <Game
-            name={game.name}
-            released={game.released}
-            id={game.id}
-            image={game.background_image}
-            key={game.id}
-          />
-        ))}
-      </HomeStyles.Games>
-      <HomeStyles.Games>
-        {newGames.map((game) => (
-          <Game
-            name={game.name}
-            released={game.released}
-            id={game.id}
-            image={game.background_image}
-            key={game.id}
-          />
-        ))}
-      </HomeStyles.Games>
+      {upcoming.length ? (
+        <div>
+          <h2>Upcoming Games</h2>
+          <HomeStyles.Games>
+            {upcoming.map((game) => (
+              <Game
+                name={game.name}
+                released={game.released}
+                id={game.id}
+                image={game.background_image}
+                key={game.id}
+              />
+            ))}
+          </HomeStyles.Games>
+        </div>
+      ) : (
+        ""
+      )}
+      {popular.length ? (
+        <div>
+          <h2>Popular Games</h2>
+          <HomeStyles.Games>
+            {popular.map((game) => (
+              <Game
+                name={game.name}
+                released={game.released}
+                id={game.id}
+                image={game.background_image}
+                key={game.id}
+              />
+            ))}
+          </HomeStyles.Games>
+        </div>
+      ) : (
+        ""
+      )}
+      {newGames.length ? (
+        <div>
+          <h2>New Games</h2>
+          <HomeStyles.Games>
+            {newGames.map((game) => (
+              <Game
+                name={game.name}
+                released={game.released}
+                id={game.id}
+                image={game.background_image}
+                key={game.id}
+              />
+            ))}
+          </HomeStyles.Games>
+        </div>
+      ) : (
+        ""
+      )}
     </HomeStyles.GameList>
   );
 };
