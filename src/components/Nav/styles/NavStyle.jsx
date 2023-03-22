@@ -51,7 +51,7 @@ const StyledNav = styled(motion.nav)`
 `;
 
 const StyledFilter = styled(motion.div)`
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   .active {
     background: #ff7676;
     color: white;

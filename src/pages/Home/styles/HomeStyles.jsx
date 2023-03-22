@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const GameList = styled(motion.div)`
-  margin-top: -10%;
+  margin-top: -6%;
+  /* margin-bottom: -11%; */
   padding: 0rem 5rem;
   h2 {
-    padding: 5rem 0rem;
+    padding: 2rem 0rem;
   }
   @media (max-width: 1000px) {
     h2 {

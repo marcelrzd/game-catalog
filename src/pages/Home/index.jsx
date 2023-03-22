@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 // Redux
 import { useDispatch, useSelector } from "react-redux";
-import { loadGames } from "../../actions/gamesAction";
+import { loadAll, loadInitialGames } from "../../actions/gamesAction";
 // style and animation
 import HomeStyles from "./styles/HomeStyles";
 import { AnimatePresence } from "framer-motion";
@@ -19,7 +19,7 @@ const Home = () => {
   // Fetch games
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(loadGames());
+    dispatch(loadAll());
   }, [dispatch]);
 
   //   Get data
