@@ -62,6 +62,7 @@ const StyledFilter = styled(motion.div)`
     justify-content: center;
     li {
       font-weight: bold;
+      margin-left: 5px;
       position: relative;
       border-radius: 1.3rem;
       border: none;
